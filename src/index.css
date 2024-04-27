@@ -3,4 +3,5 @@
 body {
   background: #fffbf1;
   overflow-x: hidden;
+  height: fit-content;
 }

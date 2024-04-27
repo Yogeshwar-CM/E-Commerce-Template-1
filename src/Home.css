@@ -1,0 +1,117 @@
+.Home {
+  text-align: center;
+}
+
+.carousel-container {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  overflow: hidden; /* Ensure that the carousel content does not overflow */
+}
+
+.carousel {
+  position: relative; /* Ensure that buttons are positioned relative to the carousel */
+  display: flex;
+}
+
+.carousel img {
+  width: 100%; /* Ensure images take up the full width of the carousel */
+  height: auto; /* Maintain aspect ratio */
+  flex-shrink: 0; /* Prevent images from shrinking */
+  transition: transform 0.5s ease; /* Add transition for smooth sliding effect */
+  transform: translateX(0); /* Start with initial position */
+}
+
+.slide {
+  flex: 0 0 100%; /* Ensure each slide takes up full width */
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px;
+  z-index: 1;
+}
+
+#tie,
+#skirt,
+#tshirt,
+#cap {
+  position: absolute;
+  display: block;
+  animation: infinite 2s;
+  animation-name: alive;
+}
+
+#cap {
+  top: 24rem;
+  right: 4rem;
+  transform: rotate(-20deg);
+}
+#skirt {
+  top: 30rem;
+  right: 3.1rem;
+  transform: rotate(30deg);
+}
+#tshirt {
+  top: 20rem;
+  left: 4.1rem;
+  transform: rotate(-40deg);
+}
+#tie {
+  top: 29rem;
+  left: 4rem;
+  transform: rotate(-12deg);
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.product-container {
+  display: flex;
+  margin-top: 2rem;
+  width: 98vw;
+  align-items: center;
+  flex-direction: column;
+}
+
+.product-container h1 {
+  width: 82vw;
+  text-align: left;
+  font-size: clamp(1.5rem, 0.85rem + 1.733vw, 2.41rem);
+}
+
+@keyframes alive {
+  0% {
+    transform: translate(0) rotate(0deg);
+  }
+  25% {
+    transform: translate(0.5rem, 0.2rem) rotate(2deg);
+  }
+  75% {
+    transform: translate(0.1rem, 0.6rem) rotate(0deg);
+  }
+  100% {
+    transform: translate(0) rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 920px) {
+  #tie,
+  #tshirt,
+  #skirt,
+  #cap {
+    display: none;
+  }
+}

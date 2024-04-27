@@ -6,6 +6,9 @@
   overflow-x: hidden;
   font-size: 1.5rem;
 }
+.Navbar li {
+  cursor: pointer;
+}
 
 .logo {
   height: 2rem;
@@ -19,11 +22,12 @@
 }
 
 .menu {
-  display: flex;
+  display: none;
   align-items: center;
 }
 
-.menu ul {
+.menu ul,
+.main ul {
   display: flex;
   text-decoration: none;
   justify-content: center;
@@ -75,14 +79,28 @@
   border-radius: 1px solid #fffbf1;
   border-radius: 1.5rem;
 }
+.logo {
+  height: 2rem;
+}
+
+.menu,
+.menu-closed {
+  display: none;
+}
 
 .main {
   display: block;
 }
 
 @media screen and (max-width: 924px) {
+  .logo {
+    margin-top: 1rem;
+  }
   .menu-toggle {
     display: block;
+    position: fixed;
+    top: 1rem;
+    right: 0.5rem;
     margin-right: 1rem;
   }
 
@@ -94,6 +112,9 @@
     flex-direction: column;
     padding: 0;
     align-items: center;
+  }
+  .menu-closed {
+    display: none;
   }
   .auth2 {
     display: flex;
@@ -120,6 +141,8 @@
     flex-direction: column;
     position: fixed;
     align-items: center;
+    display: flex;
+    z-index: 100;
     justify-content: space-around;
     top: 8%;
     height: 40vh;
@@ -134,7 +157,7 @@
   }
 
   .main {
-    display: none; /* Hide by default on small screens */
+    display: none;
   }
 
   .auth {
