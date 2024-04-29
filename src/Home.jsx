@@ -13,6 +13,7 @@ import p2 from "./assets/p2.jpg";
 import p3 from "./assets/p3.jpg";
 import p4 from "./assets/p4.jpg";
 import b3 from "./assets/b3.png";
+import Footer from "./components/Footer/Footer";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -123,6 +124,7 @@ const Home = () => {
             </button>
           </div>
         </div> */}
+        <Footer />
       </div>
     </div>
   );

@@ -39,35 +39,36 @@
   z-index: 1;
 }
 
-#tie,
-#skirt,
-#tshirt,
 #cap {
   position: absolute;
-  display: block;
-  animation: infinite 2s;
-  animation-name: alive;
-}
-
-#cap {
   top: 24rem;
   right: 4rem;
   transform: rotate(-20deg);
+  animation: capAnimation 2s infinite; /* Apply the animation to the cap */
 }
+
 #skirt {
+  position: absolute;
   top: 30rem;
   right: 3.1rem;
   transform: rotate(30deg);
+  animation: skirtAnimation 2s infinite; /* Apply the animation to the skirt */
 }
+
 #tshirt {
+  position: absolute;
   top: 20rem;
   left: 4.1rem;
   transform: rotate(-40deg);
+  animation: tshirtAnimation 2s infinite; /* Apply the animation to the t-shirt */
 }
+
 #tie {
+  position: absolute;
   top: 29rem;
   left: 4rem;
   transform: rotate(-12deg);
+  animation: tieAnimation 2s infinite; /* Apply the animation to the tie */
 }
 
 .prev {
@@ -92,8 +93,9 @@
   font-size: clamp(1.5rem, 0.85rem + 1.733vw, 2.41rem);
 }
 
-@keyframes alive {
-  0% {
+@keyframes capAnimation {
+  0%,
+  100% {
     transform: translate(0) rotate(0deg);
   }
   25% {
@@ -102,8 +104,59 @@
   75% {
     transform: translate(0.1rem, 0.6rem) rotate(0deg);
   }
-  100% {
-    transform: translate(0) rotate(0deg);
+}
+
+@keyframes skirtAnimation {
+  0% {
+    top: 30rem;
+    right: 3.1rem;
+    transform: rotate(30deg);
+  }
+  75% {
+    top: 30.5rem;
+    right: 3.3rem;
+    transform: rotate(32deg);
+  }
+  25% {
+    top: 29.5rem;
+    right: 3rem;
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes tshirtAnimation {
+  0% {
+    top: 20rem;
+    left: 4.1rem;
+    transform: rotate(-40deg);
+  }
+  25% {
+    top: 20.5rem;
+    left: 4.3rem;
+    transform: rotate(-38deg);
+  }
+  75% {
+    top: 19.5rem;
+    left: 4rem;
+    transform: rotate(-40deg);
+  }
+}
+
+@keyframes tieAnimation {
+  0% {
+    top: 29rem;
+    left: 4rem;
+    transform: rotate(-12deg);
+  }
+  25% {
+    top: 29.5rem;
+    left: 4.2rem;
+    transform: rotate(-10deg);
+  }
+  75% {
+    top: 28.5rem;
+    left: 3.9rem;
+    transform: rotate(-12deg);
   }
 }
 

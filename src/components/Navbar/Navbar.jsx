@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
 import "./Navbar.css";
 import logo from "../../assets/BRAND.svg";
+import { useNavigate } from "react-router-dom";
 import { signInWithGoogle } from "../../firebaseConfig";
 import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { user, signOut, setUser } = useContext(AuthContext); // Destructure user and signOut from AuthContext
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -26,16 +28,40 @@ const Navbar = () => {
       </div>
       <div className="main">
         <ul>
-          <li>About</li>
+          <li
+            onClick={() => {
+              navigate("/about");
+            }}
+          >
+            About
+          </li>
           <li>Offers</li>
-          <li>Support</li>
+          <li
+            onClick={() => {
+              navigate("/contact");
+            }}
+          >
+            Support
+          </li>
         </ul>
       </div>
       <div className={`${menuOpen ? "menu" : "menu-closed"}`}>
         <ul>
-          <li>About</li>
+          <li
+            onClick={() => {
+              navigate("/about");
+            }}
+          >
+            About
+          </li>
           <li>Offers</li>
-          <li>Support</li>
+          <li
+            onClick={() => {
+              navigate("/contact");
+            }}
+          >
+            Support
+          </li>
         </ul>
         {user ? (
           <div className="auth" onClick={signOut}>
